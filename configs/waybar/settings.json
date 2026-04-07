@@ -1,5 +1,4 @@
 {
-	// Main settings
 	"name": "waybar",
 	"id": "waybar",
 	"layer": "top",

@@ -2,20 +2,28 @@
 
 * {
 	font-family: FontAwesome, "JetBrainsMono Nerd Font", Helvetica, Roboto, sans-serif;
-	font-size: 13px;
+	font-size: 10px;
+	color: @color13;
 }
 
 /** Common style **/
 label,
-#wireless {
-	min-width: 1.5em;
-	border-radius: .9em;
-	margin: .6em .3em;
+#gs,
+#spaces,
+#title,
+#hwstats,
+#wireless,
+#menu,
+#music {
+	min-width: 2em;
+	border-radius: 2em;
+	margin: .3em .2em;
 	padding: .2em .6em;
+	background-color: @background;
 }
 
 window#waybar {
-	background-color: transparent;
+	background-color: @background;
 	color: @foreground;
 }
 
@@ -23,57 +31,75 @@ window#waybar.hidden {
 	opacity: 0.2;
 }
 
-#window {
-	border: 1px solid @color11;
-	background: @color11;
+#title {
+	background-color: @background;
 }
 
-window#waybar.empty #window {
+#title * {
+	margin: 0;
+	padding: 0;
+}
+
+window#waybar.empty #title {
 	border: none;
 }
+#title label{
+	background-color: transparent;
+}
 
-#waybar.empty #window {
+#waybar.empty #title {
 	background-color: transparent;
 }
 
 #spaces {
-	margin: .6em .3em;
-	border-radius: 12px;
-	background-color: @color12;
+	padding: 0;
+	background-color: @background;
+}
+#spaces label{
+	background-color: transparent;
 }
 
 #workspaces button label{
 	margin: 0; 
 	padding: 0;
+	font-size: 10px;
 }
 
 #workspaces button {
+	margin: 0;
+	min-width: 1em;
 	padding: 0;
-	margin: 3px;
-	min-width: 2em;
-	border-radius: 12px;
-	background-color: @color4;
-	opacity: 0.8;
-	font-size: 13px;
+	border-radius: 0;
+	background-color: @background;
+	opacity: 0.5;
+	font-size: 1em;
 	transition: all 0.3s ease-in;
 }
 
+#workspaces button:first-child{
+	border-radius: 3em 0 0 3em;
+}
+#workspaces button:last-child{
+	border-radius: 0 3em 3em 0;
+}
+
+#workspaces button:first-child:only-child {
+	border-radius: 3em;
+	min-width: 3em;
+}
+
 #workspaces button.active {
-	border-radius: 10px;
-	min-width: 4em;
-	background-color: @color3;
+	background-color: @background;
 	opacity: 1;
 	transition: all 0.3s ease-out;
 }
 
-#backlight {
-	color: @color0;
-	background-color: @color3;
-}
-
-#battery {
-	color: @color0;
-	background-color: @color11;
+#workspaces button:hover {
+	background: none;
+	background-color: @background;
+	border-color: @color2;
+	opacity: .8;
+	transition: all 0.3s ease-out;
 }
 
 @keyframes blink {
@@ -83,8 +109,7 @@ window#waybar.empty #window {
 }
 
 #battery.critical:not(.charging) {
-	background-color: @color1;
-	color: @color1;
+	background-color: @background;
 	animation-name: blink;
 	animation-duration: 0.5s;
 	animation-timing-function: linear;
@@ -92,118 +117,48 @@ window#waybar.empty #window {
 	animation-direction: alternate;
 }
 
-#clock {
-	color: @color6;
-	background-color: @color2;
-}
-
-#cpu {
-	color: @color0;
-	background-color: @color8;
-}
-
-#memory {
-	color: @color0;
-	background-color: @color9;
-}
-
-#disk {
-	color: @color0;
-	background-color: @color12;
-}
-
-#mpd {
-	background-color: @color6;
-}
-
-#mpd.disconnected {
-	background-color: @color1;
-}
-
-#mpd.stopped {
-	background-color: @color2;
-}
-
-#mpd.playing {
-	background-color: @color7;
-}
-
-#pulseaudio {
-	background-color: @color10;
-}
-
-#pulseaudio.bluetooth {
-	background-color: @color2;
-}
-
-#pulseaudio.muted {
-	background-color: @color0;
-}
-
-#custom-menu {
-	background-color: @color2;
-
-	margin-left: 6px;
-
-	font-size: 16px;
-}
-
-#custom-power {
-	color: @color6;
-	background-color: @color1;
-
-	margin-right: 6px;
-}
-
-#custom-speed {
-	color: @color0;
-	background-color: @color5;
-
-	margin-right: 6px;
-}
-
-#custom-pipewire {
-	color: @color1;
-	background-color: @color6;
-
-	transition: all 1s 5s ease-in-out;
-}
-
-#custom-logo {
-	color: @color6;
-	background-color: @color1;
-}
-
-#custom-notification {
-	color: @color1;
-	background-color: @color11;
-
-	margin-right: 6px;
-}
-
-#custom-temp {
-	color: @color1;
-	background-color: @color6;
-}
-
 /* Wireless group (wifi & bluetooth) */
-#wireless {
-	color: @color1;
-	background-color: @color13;
-}
-
 #wireless label {
 	padding: .1em;
 	margin: .2em .1em;
+  background-color: transparent;
+}
+
+#hwstats {
+	padding: 0;
+}
+#hwstats label {
+  background-color: transparent;
+}
+
+#menu #hwstats {
+  margin: .0em;
+}
+#menu {
+  padding: 0;
+}
+#menu label {
+  background-color: transparent;
+}
+
+#music #mpd {
+  margin: .0em;
+}
+#music {
+  padding: 0;
+}
+#music label {
+  background-color: transparent;
 }
 
 /* adding more padding on the sides, I tried to do it the easy way (it didn't work) */
-window#waybar box.horizontal.modules-left>widget:first-child>label {
-	margin-left: .9em;
-	margin-right: .3em;
+window#waybar box.horizontal.modules-left>widget:first-child box {
+	margin-left: 5px;
+	margin-right: .1em;
 }
 
-window#waybar box.horizontal.modules-right>widget:last-child>label {
-	margin-left: .3em;
-	margin-right: .9em;
+window#waybar box.horizontal.modules-right>widget:last-child label {
+	margin-left: .1em;
+	margin-right: 5px;
 }
+
