@@ -1,0 +1,43 @@
+@import '/home/serafim/.config/waybar/wallust/colors-waybar.css';
+
+#window {
+    background-color: @background;
+}
+
+button {
+    background-color: @background;
+    border: none;
+    margin: 0px;
+    font-size: 9pt;
+    color: @color11;
+    transition:  all 0.3s cubic-bezier(.25,.50,.50,.25);
+}
+
+button:hover{
+	color: @color15;
+}
+
+#description-shutdown {
+    font-size: 9pt;
+    color: white;
+}
+
+#description-reboot {
+    color: white;
+}
+
+#description-logout {
+    color: white;
+}
+
+#description-hibernate {
+    color: white;
+}
+
+#description-suspend {
+    color: white;
+}
+
+#description-lock {
+    color: white;
+}
