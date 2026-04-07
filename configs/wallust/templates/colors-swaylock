@@ -1,11 +1,7 @@
-image=$WALLPAPER
+image=$(swww query | awk '{print $8}')
 
 ignore-empty-password
 font=Jet Brains Mono
-
-clock
-timestr=%R
-datestr=%a, %e of %B
 
 screenshots
 

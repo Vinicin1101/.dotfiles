@@ -1,17 +1,19 @@
 
 * {
     font: "JetBrainsMono Nerd Font 10";
+    foreground: {{foreground}};
+    background: {{background}};
     background-color: transparent;
-
-    foreground: {{color6}};
-    active-background: rgba({{color6 | rgb}}, 0.8);
     urgent-background: {{color4}};
-    color: {{color6}};
-    prompt: {{color8}};
+    color: {{color14}};
+    prompt: {{color3}};
     entry: {{color5}};
-    selected-background: {{color2}};
-    selected-urgent-background: @urgent-background;
-    selected-active-background: {{color8}};
-    separatorcolor: @active-background;
+    selected-background: rgba({{color2 | rgb}}, 60%);
+    selected-active-background: rgba({{color8 | rgb}}, 60%);
+    separatorcolor: {{color7}};
     bordercolor: @selected-background;
+}
+
+#mainbox {
+    background-color: rgba({{background | rgb}}, 60%);
 }
