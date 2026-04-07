@@ -1,0 +1,164 @@
+@import '../../.config/waybar/wallust/colors-waybar.css';
+
+* {
+	font-family: FontAwesome, "JetBrainsMono Nerd Font", Helvetica, Roboto, sans-serif;
+	font-size: 10px;
+	color: @color13;
+}
+
+/** Common style **/
+label,
+#gs,
+#spaces,
+#title,
+#hwstats,
+#wireless,
+#menu,
+#music {
+	min-width: 2em;
+	border-radius: 2em;
+	margin: .3em .2em;
+	padding: .2em .6em;
+	background-color: @background;
+}
+
+window#waybar {
+	background-color: @background;
+	color: @foreground;
+}
+
+window#waybar.hidden {
+	opacity: 0.2;
+}
+
+#title {
+	background-color: @background;
+}
+
+#title * {
+	margin: 0;
+	padding: 0;
+}
+
+window#waybar.empty #title {
+	border: none;
+}
+#title label{
+	background-color: transparent;
+}
+
+#waybar.empty #title {
+	background-color: transparent;
+}
+
+#spaces {
+	padding: 0;
+	background-color: @background;
+}
+#spaces label{
+	background-color: transparent;
+}
+
+#workspaces button label{
+	margin: 0; 
+	padding: 0;
+	font-size: 10px;
+}
+
+#workspaces button {
+	margin: 0;
+	min-width: 1em;
+	padding: 0;
+	border-radius: 0;
+	background-color: @background;
+	opacity: 0.5;
+	font-size: 1em;
+	transition: all 0.3s ease-in;
+}
+
+#workspaces button:first-child{
+	border-radius: 3em 0 0 3em;
+}
+#workspaces button:last-child{
+	border-radius: 0 3em 3em 0;
+}
+
+#workspaces button:first-child:only-child {
+	border-radius: 3em;
+	min-width: 3em;
+}
+
+#workspaces button.active {
+	background-color: @background;
+	opacity: 1;
+	transition: all 0.3s ease-out;
+}
+
+#workspaces button:hover {
+	background: none;
+	background-color: @background;
+	border-color: @color2;
+	opacity: .8;
+	transition: all 0.3s ease-out;
+}
+
+@keyframes blink {
+	to {
+		color: @color0;
+	}
+}
+
+#battery.critical:not(.charging) {
+	background-color: @background;
+	animation-name: blink;
+	animation-duration: 0.5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+/* Wireless group (wifi & bluetooth) */
+#wireless label {
+	padding: .1em;
+	margin: .2em .1em;
+  background-color: transparent;
+}
+
+#hwstats {
+	padding: 0;
+}
+#hwstats label {
+  background-color: transparent;
+}
+
+#menu #hwstats {
+  margin: .0em;
+}
+#menu {
+  padding: 0;
+}
+#menu label {
+  background-color: transparent;
+}
+
+#music #mpd {
+  margin: .0em;
+}
+#music {
+  padding: 0;
+}
+#music label {
+  background-color: transparent;
+}
+
+/* adding more padding on the sides, I tried to do it the easy way (it didn't work) */
+window#waybar box.horizontal.modules-left>widget:first-child box {
+	margin-left: 5px;
+	margin-right: .1em;
+}
+
+window#waybar box.horizontal.modules-right>widget:last-child label {
+	margin-left: .1em;
+	margin-right: 5px;
+}
+

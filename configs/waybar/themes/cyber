@@ -1,0 +1,19 @@
+{
+  "include": [
+    "$HOME/.config/waybar/settings.json",
+    "$HOME/.config/waybar/modules.json",
+    "$HOME/.config/waybar/wallust/clock-waybar.json"
+  ],
+  "modules-left": [
+    "group/menu",
+    "group/spaces",
+    "group/title"
+  ],
+  "modules-center": [],
+  "modules-right": [
+    "group/wireless",
+    "group/music",
+    "custom/notification",
+    "clock#gar"
+  ]
+}

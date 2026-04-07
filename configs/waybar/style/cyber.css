@@ -1,0 +1,226 @@
+@import '../../.config/waybar/wallust/colors-waybar.css';
+
+* {
+	font-family: FontAwesome, "JetBrainsMono Nerd Font", Helvetica, Roboto, sans-serif;
+	font-size: 10px;
+	color: @color13;
+}
+
+/** Common style **/
+label,
+#gs,
+#spaces,
+#title,
+#hwstats,
+#wireless {
+	min-width: 2em;
+	margin: .3em .2em;
+	padding: .2em .6em;
+}
+
+window#waybar {
+	background-color: @background;
+	color: @foreground;
+}
+
+window#waybar.hidden {
+	opacity: 0.2;
+}
+
+#title {
+	background-color: @background;
+}
+
+#title * {
+	margin: 0;
+	padding: 0;
+}
+
+window#waybar.empty #title {
+	border: none;
+}
+
+#waybar.empty #title {
+	background-color: transparent;
+}
+
+#spaces {
+	padding: 0;
+	background-color: @background;
+}
+
+#hwstats {
+	padding: 0;
+	background-color: @background;
+}
+
+#workspaces button label{
+	margin: 0; 
+	padding: 0;
+	font-size: 10px;
+}
+
+#workspaces button {
+	margin: 0;
+	min-width: 1em;
+	padding: 0;
+	border-radius: 0;
+	background-color: @background;
+	opacity: 0.5;
+	font-size: 1em;
+	transition: all 0.3s ease-in;
+}
+
+#workspaces button:first-child{
+	border-radius: 3em 0 0 3em;
+}
+#workspaces button:last-child{
+	border-radius: 0 3em 3em 0;
+}
+
+#workspaces button:first-child:only-child {
+	border-radius: 3em;
+	min-width: 3em;
+}
+
+#workspaces button.active {
+	background-color: @background;
+	opacity: 1;
+	transition: all 0.3s ease-out;
+}
+
+#workspaces button:hover {
+	background: none;
+	background-color: @background;
+	border-color: @color2;
+	opacity: .8;
+	transition: all 0.3s ease-out;
+}
+
+#backlight {
+	background-color: @background;
+}
+
+#battery {
+	background-color: @background;
+}
+
+@keyframes blink {
+	to {
+		color: @color0;
+	}
+}
+
+#battery.critical:not(.charging) {
+	background-color: @background;
+	animation-name: blink;
+	animation-duration: 0.5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+#clock {
+	background-color: @background;
+}
+
+#cpu {
+	background-color: @background;
+}
+
+#memory {
+	background-color: @background;
+}
+
+#disk {
+	background-color: @background;
+}
+
+#mpd {
+	background-color: @background;
+}
+
+#mpd.disconnected {
+	background-color: @background;
+}
+
+#mpd.stopped {
+	background-color: @background;
+}
+
+#mpd.playing {
+	background-color: @background;
+}
+
+#pulseaudio {
+	background-color: @background;
+}
+
+#pulseaudio.bluetooth {
+	background-color: @background;
+}
+
+#pulseaudio.muted {
+	background-color: @background;
+}
+
+#custom-menu {
+	background-color: @background;
+	font-size: 16px;
+}
+
+#custom-power {
+	background-color: @background;
+
+	margin-right: 6px;
+}
+
+#custom-speed {
+	background-color: @background;
+
+	margin-right: 6px;
+}
+
+#custom-pipewire {
+	background-color: @background;
+
+	transition: all 1s 5s ease-in-out;
+}
+
+#custom-logo {
+	background-color: @background;
+}
+
+#custom-notification {
+	background-color: @background;
+
+	margin-right: 6px;
+}
+
+#custom-temp {
+	background-color: @background;
+}
+#gs {
+	background-color: @background;
+}
+
+/* Wireless group (wifi & bluetooth) */
+#wireless {
+	background-color: @background;
+}
+
+#wireless label {
+	padding: .1em;
+	margin: .2em .1em;
+}
+
+/* adding more padding on the sides, I tried to do it the easy way (it didn't work) */
+window#waybar box.horizontal.modules-left>widget:first-child>label {
+	margin-left: 5px;
+	margin-right: .3em;
+}
+
+window#waybar box.horizontal.modules-right>widget:last-child>label {
+	margin-left: .1em;
+	margin-right: 5px;
+}
