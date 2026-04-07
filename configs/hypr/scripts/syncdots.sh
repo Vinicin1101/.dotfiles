@@ -2,7 +2,6 @@
 
 # Dots
 directories=(
-  "cava"
   "clipse"
   "hypr"
   "rofi"
@@ -10,12 +9,12 @@ directories=(
   "swaync"
   "wallust"
   "waybar"
-  "wlogout"
+  "tschuss"
 )
 
 # source & destination
 source_base="$HOME/.config"
-destination_base="$HOME/repos/Hyprland-rice/configs"
+destination_base="$HOME/repos/.dotfiles/configs"
 
 # If not exists
 mkdir -p "$destination_base"
