@@ -7,23 +7,18 @@ configuration {
 @theme "~/.config/rofi/wallust/colors-rofi.rasi"
 
 #window {
-    background-color: rgba(10,11,16, 0.8);
     border: 1px solid ;
     border-radius: 10px;
     border-color: @bordercolor;
-    padding: 0.5em;
 }
 #mainbox {
     border: 0;
-    padding: 0.1em;
+    padding: 0.5em;
 }
 #message {
     border: 1px solid 0px 0px ;
     border-color: @separatorcolor;
     padding: 1px ;
-}
-#textbox {
-    text-color: @foreground;
 }
 #listview {
     fixed-height: 0;
@@ -37,47 +32,19 @@ configuration {
     border: 0;
     border-radius: 6px;
     padding: 0.3em 0.5em;
-}
-#element.normal.normal {
-    text-color: @foreground;
-}
-#element.normal.urgent {
-    text-color: @urgent-foreground;
-}
-#element.normal.active {
-    background-color: @active-background;
-    text-color: @foreground;
+    background-color: transparent;
 }
 #element.selected.normal {
     background-color: @selected-background;
-    text-color: @foreground;
-}
-#element.selected.urgent {
-    background-color: @selected-urgent-background;
     text-color: @foreground;
 }
 #element.selected.active {
     background-color: @selected-active-background;
     text-color: @foreground;
 }
-#element.alternate.normal {
-    text-color: @foreground;
-}
-#element.alternate.urgent {
-    background-color: @urgent-background;
-    text-color: @foreground;
-}
-#element.alternate.active {
-    background-color: @active-background;
-    text-color: @foreground;
-}
 #sidebar {
     border: 2px dash 0px 0px ;
     border-color: @separatorcolor;
-}
-#button.selected {
-    background-color: @selected-background;
-    text-color: @foreground;
 }
 #inputbar {
     spacing: 0;

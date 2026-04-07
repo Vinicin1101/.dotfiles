@@ -1,6 +1,6 @@
 {
     "historyFile": "clipboard_history.json",
-    "maxHistory": 100,
-    "themeFile": "wallust_theme.json",
+    "maxHistory": 1000,
+    "themeFile": "theme/wallust_theme.json",
     "tempDir": "tmp_files"
 }

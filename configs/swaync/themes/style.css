@@ -5,7 +5,7 @@
 @import './themes/wallust/colors-wallust.css';
 @import './themes/notificatio.css';
 
-@define-color noti-border-color @color12;
+@define-color noti-border-color @border-color;
 @define-color noti-bg rgba(0,0,0, 0.8);
 @define-color noti-bg-alt #111111;
 @define-color noti-bg-hover @color9;
@@ -21,7 +21,7 @@
 .control-center .notification-row:hover {
 	opacity: 1;
 	background: @noti-bg;
-	border-radius: 10px
+	border-radius: 5em; 
 }
 
 .notification-row {
@@ -30,7 +30,7 @@
 }
 
 .notification {
-	border-radius: 10px;
+	border-radius: 2em;
 }
 
 .notification-content{

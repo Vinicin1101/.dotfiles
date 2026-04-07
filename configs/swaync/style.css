@@ -23,16 +23,15 @@ slider {
 }
 
 .floating-notifications.background .notification-row .notification-background {
-  border-radius: 12.6px;
-  border: 1px solid @color3;
+  border-radius: 6px;
+  border: 1px solid @color7;
   margin: .25em;
   background-color: @background-center;
-  color: @text-color;
   padding: 5px;
 }
 
 .floating-notifications .notification-row .notification-background .notification .notification-content .summary {
-  color: @color1;
+  color: @color5;
 }
 
 .floating-notifications.background .notification-row .notification-background .notification {
@@ -46,7 +45,7 @@ slider {
 }
 
 .floating-notifications.background .notification-row .notification-background .notification>*:last-child>* .notification-action {
-  border-radius: 7px;
+  border-radius: 2em;
   color: @text-color;
   background-color: @background;
   box-shadow: inset 0 0 0 1px @background-alt;
@@ -65,7 +64,7 @@ slider {
 }
 
 .floating-notifications.background .notification-row .notification-background .close-button {
-  border-radius: 6.3px;
+  border-radius: 2em;
   color: @background-alt;
   background-color: @urgent;
 }
@@ -76,8 +75,8 @@ slider {
 }
 
 .control-center {
-  box-shadow: 0 0 3px 0 @color2;
-  border-radius: 12.6px;
+  border-radius: 6px;
+  border: 1px solid @color3;
   background-color: @background-center;
   color: @text-color;
   padding: 2em;
@@ -90,7 +89,7 @@ slider {
 }
 
 .control-center .widget-title button {
-  border-radius: 7px;
+  border-radius: 2em;
   padding: .6em 1em;
   color: @text-color;
   background-color: @button-active;
@@ -103,7 +102,6 @@ slider {
 }
 
 .control-center .widget-title button:active {
-  box-shadow: inset 0 0 0 1px @background-alt;
   background-color: @button-active;
   color: @background-alt;
 }
@@ -113,14 +111,15 @@ slider {
 }
 
 .control-center .notification-row .notification-background {
-  border-radius: 7px;
+  border-radius: 12.6px;
   color: @text-color;
-  background-color: @background;
-  box-shadow: inset 0 0 0 1px @background-alt;
+  background-color: @background-center;
+  background-color: rgba(28, 28, 34, 0.35);
 }
 
 .control-center .notification-row .notification-background .notification {
-  border-radius: 7px;
+  border-radius: 12.6px;
+  color: @text-color;
   background-color: @background;
   border: 1px solid ;
 }
@@ -151,32 +150,29 @@ slider {
 }
 
 .control-center .notification-row .notification-background .notification>*:last-child>* .notification-action {
-  border-radius: 7px;
+  border-radius: 2em;
   color: @text-color;
   background-color: @background;
-  box-shadow: inset 0 0 0 1px @background-alt;
 }
 
 .control-center .notification-row .notification-background .notification>*:last-child>* .notification-action:hover {
-  box-shadow: inset 0 0 0 1px @background-alt;
   background-color: @background;
   color: @text-color;
 }
 
 .control-center .notification-row .notification-background .notification>*:last-child>* .notification-action:active {
-  box-shadow: inset 0 0 0 1px @background-alt;
   background-color: @background;
   color: @text-color;
 }
 
 .control-center .notification-row .notification-background .close-button {
-  border-radius: 6.3px;
+  border-radius: 2em;
   color: @button-background;
   background-color: @urgent;
 }
 
 .close-button {
-  border-radius: 6.3px;
+  border-radius: 2em;
 }
 
 .control-center .notification-row .notification-background .close-button:hover {
@@ -185,8 +181,8 @@ slider {
 }
 
 .control-center .notification-row .notification-background:hover {
-  box-shadow: inset 0 0 0 1px @background-alt;
   background-color: @background-alt;
+  border: 1px solid @color3;
   color: @text-color;
 }
 
@@ -201,7 +197,7 @@ slider {
 
 .control-center-dnd {
   color: @color3;
-  border-radius: 8px;
+  border-radius: 2em;
   background: @background;
   border: 1px solid @color3;
   box-shadow: none;
@@ -213,7 +209,7 @@ slider {
 
 .control-center-dnd slider {
   background: @background-alt;
-  border-radius: 8px;
+  border-radius: 2em;
 }
 
 .widget-dnd {
@@ -225,14 +221,14 @@ slider {
 .widget-dnd>switch {
   color: @color3;
   font-size: initial;
-  border-radius: 8px;
+  border-radius: 2em;
   background: @background-alt;
   box-shadow: none;
 }
 
 .widget-dnd>switch slider {
   background: @button-active;
-  border-radius: 8px;
+  border-radius: 2em;
 }
 .widget-dnd>switch:checked {
   color: @button-background;
@@ -329,11 +325,8 @@ slider {
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
-  background-color: transparent;
-  padding: 0.35rem 0.5rem;
-  margin: 0.5rem;
-  transition: all 0.5s cubic-bezier(.55, 0.0, .28, 1.682), box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
-  box-shadow: 0 0 5px @color2;
+  background-color: @color2;
+  transition: all 1s cubic-bezier(0.25,0.46,0.45,0.94);
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:checked {
