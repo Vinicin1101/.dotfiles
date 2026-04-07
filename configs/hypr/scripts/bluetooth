@@ -1,0 +1,11 @@
+#!/usr/bin/expect -f
+spawn bluetoothctl connect 1C:52:16:B5:C5:78
+expect {
+    "Connection successful" {
+        exec notify-send "Bluetooth" "Connection successful"
+    }
+    "Failed to connect" {
+        exec notify-send "Bluetooth" "Connection failed (unpaired or unavailable device)"
+    }
+}
+
