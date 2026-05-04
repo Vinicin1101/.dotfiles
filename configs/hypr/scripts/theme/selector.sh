@@ -1,33 +1,36 @@
 #!/bin/bash
 
-# Construct a themes path
-themes_dir="$HOME/.config/waybar/themes"
-themes_list=$(ls $themes_dir -I 'selector.sh') || {
-  echo "Error: No Themes found in $themes_dir"
-  $(rofi -e "No Themes found in $themes_dir")
+# Paths
+base_dir="$HOME/.config/hypr"
+configs_dir="$base_dir/themes"
+
+# Construct a configs path
+configs_list=$(ls $configs_dir -I 'selector.sh') || {
+  echo "Error: No config found in $configs_dir"
+  $(rofi -e "No config found in $configs_dir")
   # exit 1
 }
 
 
 # Rofi #
-current_theme=$(cat "$HOME/.CURRENT_WAYBAR_THEME")
-selected_theme=$(echo "* $current_theme
-$themes_list" | rofi -dmenu -p "Select your waybar theme")
+current_config=$(cat "$HOME/.CURRENT_HYPR_CONFIG")
+selected_config=$(echo "* $current_config
+$configs_list" | rofi -dmenu -p "Select your hypr config")
 
-if [[ -z "$selected_theme" ]]; then
-  # No theme selected
+if [[ -z "$selected_config" ]]; then
+  # No config selected
   exit 1
 fi
 
 # Reconstruct the path #
-$selected_theme="${selected_theme//\* /}"
-selected_path="$themes_dir/$selected_theme"
+echo $selected_config
+selected_path="$configs_dir/$selected_config"
 
 # Save current selection in file
-$(echo "$selected_theme" > "$HOME/.CURRENT_WAYBAR_THEME")
+$(echo "$selected_config" > "$HOME/.CURRENT_HYPR_CONFIG")
 
-# Execute the wallpaper script #
-$(rm "$HOME/.config/waybar/config")
-$(ln -s "$selected_path" "$HOME/.config/waybar/config")
-$(pkill waybar)
-waybar
+# Execute the config script #
+$(rm "$HOME/.config/hypr/hyprland.conf")
+$(ln -s "$selected_path" "$HOME/.config/hypr/hyprland.conf")
+
+hyprctl reload
