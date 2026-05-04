@@ -9,3 +9,5 @@ configs/waybar/wallust/colors-waybar.css
 configs/waybar/wallust/clock-waybar
 configs/rofi/wallust/colors-rofi.rasi
 configs/swaylock/config
+configs/clipse/clipboard_history.json
+configs/clipse/tmp_files/
