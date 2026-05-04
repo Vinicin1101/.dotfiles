@@ -5,12 +5,18 @@
     "on-click": "activate",
     "active-only": false,
     "all-outputs": true,
-    "format": "{icon}",
+    "format": "{id}",
     "format-icons": {
+	"1": "1",
+	"2": "2",
+	"3": "3",
+	"4": "4",
+	"5": "5",
       "urgent": "",
       "default": ""
     }
   },
+  
   "custom/host": {
     "exec": "echo $USER@$(uname -n)",
     "format": "{}"
@@ -28,14 +34,19 @@
   },
   "cpu": {
     "interval": 10,
-    "format": "{}% ",
+    "format": " {}%",
     "max-length": 10
   },
   "custom/temp": {
-    "exec": "/home/serafim/.config/hypr/scripts/temp.py",
+    "exec": "$HOME/.config/hypr/bin/sensor-module",
     "return-type": "json",
     "interval": 5,
-    "format": "{}"
+    "format": "{icon} {}",
+    "format-icons": {
+        "cold": "",
+	"warm": "",
+	"hot": ""
+    }
   },
   "memory": {
     "interval": 5,
@@ -62,7 +73,7 @@
     "escape": true
   },
   "custom/pipewire": {
-    "exec": "$HOME/.config/hypr/scripts/sound/volume.sh -status",
+    "exec": "$HOME/.config/hypr/bin/player-module -status",
     "exec-if": true,
     "format": "{icon}{}",
     "return-type": "json",
@@ -75,7 +86,7 @@
       "default": ""
     },
     "max-length": 25,
-    "on-click-middle": "$HOME/.config/hypr/scripts/sound/volume.sh -mute",
+    "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "on-scroll-up": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+",
     "on-scroll-down": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-",
     "on-double-click": "exec playerctl next",
@@ -84,19 +95,18 @@
     "on-click-right": "exec playerctl -p spotify play-pause"
   },
   "custom/mpd": {
-    "exec": "$HOME/.config/hypr/scripts/sound/volume.sh -status",
+    "exec": "$HOME/.config/hypr/bin/player-module -status",
     "exec-if": true,
     "format": "{}",
     "return-type": "json",
     "interval": 3,
     "max-length": 25,
-    "on-click-middle": "$HOME/.config/hypr/scripts/sound/volume.sh -mute",
+    "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "on-scroll-up": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+",
     "on-scroll-down": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-",
     "on-double-click": "exec playerctl next",
     "on-double-click-right": "exec playerctl previous",
-    "on-click": "exec playerctl play-pause",
-    "on-click-right": "exec playerctl -p spotify play-pause"
+    "on-click": "exec playerctl play-pause"
   },
   "pulseaudio": {
     "format": "{icon}",

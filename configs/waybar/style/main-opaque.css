@@ -57,6 +57,7 @@ window#waybar.empty #title {
 }
 #spaces label{
 	background-color: transparent;
+	color: transparent;
 }
 
 #workspaces button label{
